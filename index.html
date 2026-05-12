@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#ffffff">
-    <title>CZASOWNIKI - CRCL</title>
+    <title>CRCL - Zegar</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
         :root { --bg-color: #ffffff; --ui-white: #ffffff; }
@@ -12,22 +12,55 @@
         body.dark-mode { --bg-color: #121212; }
         model-viewer { width: 100%; height: 100%; background-color: transparent; outline: none; display: block; }
         model-viewer::part(default-ar-button) { display: none !important; }
-        .ui-element { position: absolute; background: none; border: none; padding: 0; cursor: pointer; z-index: 100; mix-blend-mode: difference; color: var(--ui-white) !important; fill: var(--ui-white) !important; transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); -webkit-tap-highlight-color: transparent; outline: none; }
+
+        .ui-element {
+            position: absolute; background: none; border: none; padding: 0;
+            cursor: pointer; z-index: 100;
+            mix-blend-mode: difference;
+            color: var(--ui-white) !important; 
+            fill: var(--ui-white) !important;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
         .brand-btn { top: 32px; font-weight: 700; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; }
         .brand-crcl { left: 32px; }
         .brand-czasowniki { right: 32px; text-align: right; }
-        .info-panel { position: absolute; top: 65px; color: var(--ui-white); mix-blend-mode: difference; opacity: 0; pointer-events: none; transition: opacity 0.4s ease, transform 0.4s ease; z-index: 90; font-weight: 200; font-size: 14px; line-height: 1.5; letter-spacing: 0.03em; text-transform: none; transform: translateY(-5px); }
+
+        .info-panel {
+            position: absolute; top: 65px; 
+            color: var(--ui-white); mix-blend-mode: difference;
+            opacity: 0; pointer-events: none; 
+            transition: opacity 0.4s ease, transform 0.4s ease; 
+            z-index: 90;
+            font-weight: 200; 
+            font-size: 14px;  
+            line-height: 1.5; letter-spacing: 0.03em;
+            text-transform: none;
+            transform: translateY(-5px);
+        }
         .info-panel.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
         #panel-crcl { left: 32px; }
         #panel-czasowniki { right: 32px; text-align: right; max-width: 320px; }
+
         .icon-btn { width: 28px; height: 28px; bottom: 40px; display: flex; align-items: center; justify-content: center; }
         .icon-btn svg { width: 20px; height: 20px; }
+        
         #ar-label { font-weight: 800; font-size: 16px; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; }
         .btn-theme { left: 32px; }
         .btn-pause { left: 36%; transform: translateX(-50%); }
         .btn-action { left: 63%; transform: translateX(-50%); }
         .btn-reset { right: 32px; }
-        @media (min-width: 769px) { .brand-btn { font-size: 19px; top: 40px; font-weight: 500; letter-spacing: 0.25em; } .info-panel { font-size: 16px; top: 85px; } #panel-czasowniki { max-width: 500px; } .icon-btn { width: 32px; height: 32px; } .icon-btn svg { width: 24px; height: 24px; } #ar-label { font-size: 20px; font-weight: 500; } }
+
+        @media (min-width: 769px) {
+            .brand-btn { font-size: 19px; top: 40px; font-weight: 500; letter-spacing: 0.25em; }
+            .info-panel { font-size: 16px; top: 85px; }
+            #panel-czasowniki { max-width: 500px; }
+            .icon-btn { width: 32px; height: 32px; }
+            .icon-btn svg { width: 24px; height: 24px; }
+            #ar-label { font-size: 20px; font-weight: 500; }
+        }
     </style>
 </head>
 <body>
@@ -68,8 +101,8 @@
         shadow-intensity="1" shadow-softness="1"
         exposure="1.6" environment-intensity="1.8"
         autoplay
-        camera-orbit="0deg 75deg 105%" 
-        camera-target="0m 0.23m 0m"
+        camera-orbit="0deg 75deg 115%" 
+        camera-target="0m 0.28m 0m"
         min-camera-orbit="auto auto 50%" 
         max-camera-orbit="auto auto 600%"
         loading="eager" interaction-prompt="none">
@@ -77,10 +110,10 @@
 
     <script>
         const CONFIG = {
-            mobileOrbit: "0deg 75deg 95%",
-            desktopOrbit: "0deg 75deg 105%",
-            mobileTarget: "0m 0.23m 0m",
-            desktopTarget: "0m 0.23m 0m"
+            mobileOrbit: "0deg 75deg 105%",
+            desktopOrbit: "0deg 75deg 115%",
+            mobileTarget: "0m 0.28m 0m",
+            desktopTarget: "0m 0.28m 0m"
         };
 
         const mv = document.querySelector('#clock-model');
